@@ -63,6 +63,7 @@ CREATE TABLE raw_coffee_survey (
 );
 
 -- 3. Import data using COPY
+-- Make sure the file is accessible to the PostgreSQL server and the path is correct.
 COPY raw_coffee_survey
 FROM '/Users/ivanivani/Documents/PYTHON/Projects/sql-portfolio/coffee-survey/coffee_survey.csv'
 WITH (
