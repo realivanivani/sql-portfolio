@@ -1,16 +1,4 @@
-/*
-The following is my SQL data cleaning project for
-https://github.com/realivanivani/sql-portfolio/blob/main/coffee-survey/GACTT_RESULTS_ANONYMIZED_v2.csv
-
-Author: Ivan Ivani
-https://realivanivani.github.io/
-*/
-
--- 1. Drop table if it already exists
-DROP TABLE IF EXISTS raw_coffee_survey;
-
--- 2. Create table with inferred structure from the CSV
-CREATE TABLE "raw_coffee_survey" (
+CREATE TABLE "GACTT_RESULTS_ANONYMIZED_v2" (
 	"Submission ID" VARCHAR NOT NULL, 
 	"What is your age?" VARCHAR, 
 	"How many cups of coffee do you typically drink per day?" VARCHAR, 
@@ -125,10 +113,3 @@ CREATE TABLE "raw_coffee_survey" (
 	"Number of Children" VARCHAR, 
 	"Political Affiliation" VARCHAR
 );
-
-
--- 3. Import data using COPY
--- Make sure the file is accessible to the PostgreSQL server and the path is correct. 
-COPY raw_coffee_survey
-FROM '/Users/ivanivani/Documents/PYTHON/Projects/sql-portfolio/coffee-survey/GACTT_RESULTS_ANONYMIZED_v2.csv'
-WITH (FORMAT csv, HEADER true, DELIMITER ',', NULL '');
